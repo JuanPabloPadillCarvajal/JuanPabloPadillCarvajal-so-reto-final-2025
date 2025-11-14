@@ -38,10 +38,10 @@ Donde:
 ## Integrantes
 
 - Juan Pablo Padilla Carvajal
-- (Integrante 2)
-- (Integrante 3)
-- (Integrante 4)
-- (Integrante 5, si aplica)
+- Santiago Ramirez Ramirez
+- Sebastian Acosta
+- Samuel
+
 
 ## Compilación rápida
 
