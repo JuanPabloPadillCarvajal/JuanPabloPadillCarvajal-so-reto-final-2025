@@ -8,23 +8,36 @@ Este proyecto implementa una utilidad de *línea de comandos en C* para:
 - Procesar archivos de forma *concurrente* (hilos o procesos).
 - Usar *llamadas directas al sistema operativo* para manejo de archivos.
 
-## Ejecución general (propuesta)
+## Uso
 
-bash
-./gsea [operaciones] --comp-alg <algoritmo_compresion> --enc-alg <algoritmo_encriptacion>            -i <ruta_entrada> -o <ruta_salida> [-k clave_secreta]
+```bash
+./gsea [operaciones] --comp-alg <algoritmo_compresion> --enc-alg <algoritmo_encriptacion> \
+       -i <ruta_entrada> -o <ruta_salida> [-k clave_secreta]
+```
 
+### Operaciones:
+- `-c` : comprimir
+- `-d` : descomprimir
+- `-e` : encriptar
+- `-u` : desencriptar
+- Se pueden combinar, por ejemplo `-ce` para comprimir y luego encriptar.
 
-Donde:
+### Algoritmos disponibles:
+- **Compresión**: `rle`, `huffman`, `lzw`
+- **Encriptación**: `vigenere`, `des`
 
-- Operaciones:
-  - -c : comprimir
-  - -d : descomprimir
-  - -e : encriptar
-  - -u : desencriptar
-  - Se pueden combinar, por ejemplo -ce para comprimir y luego encriptar.
+### Ejemplos:
 
-- Algoritmos de compresión sugeridos: huffman, rle, lzw.
-- Algoritmos de encriptación sugeridos: vigenere, des, aes_simple.
+```bash
+# Comprimir un archivo con RLE
+./gsea -c --comp-alg rle -i archivo.txt -o archivo.comp
+
+# Comprimir y encriptar (caso de uso del examen)
+./gsea -ce --comp-alg lzw --enc-alg des -i directorio/ -o salida/ -k "G3n0m3S3cur1ty!"
+
+# Procesar directorio completo (concurrencia)
+./gsea -c --comp-alg huffman -i mis_documentos/ -o comprimidos/
+```
 
 ## Estructura del repositorio
 
@@ -40,7 +53,7 @@ Donde:
 - Juan Pablo Padilla Carvajal
 - Santiago Ramirez Ramirez
 - Sebastian Acosta
-- Samuel
+- Samuel Molina 
 
 
 ## Compilación rápida

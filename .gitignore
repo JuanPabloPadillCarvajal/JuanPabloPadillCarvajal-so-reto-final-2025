@@ -1,0 +1,34 @@
+# Ejecutables
+gsea
+*.o
+*.out
+
+# Archivos temporales de prueba
+test*.txt
+*.comp
+*.enc
+*.huff
+*.lzw
+*.bak
+out.txt
+test_decomp.txt
+test_input.txt
+
+# Directorios de salida de pruebas
+tests/output/
+output/
+Archivados/
+Restaurados/
+test_dir/
+test_dir_compressed/
+
+# Archivos de sistema
+.DS_Store
+*~
+.*.swp
+.*.swo
+
+# Archivos de compilación
+*.a
+*.so
+
